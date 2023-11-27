@@ -13,3 +13,7 @@ services:
       - "traefik.http.routers.mf_check.middlewares=traefik-https-redirect"
       - "traefik.http.routers.mf_check.tls=true"
       - "traefik.http.routers.mf_check.tls.certresolver=cloudflare"
+
+networks:
+  public_bridge:
+    external: true
