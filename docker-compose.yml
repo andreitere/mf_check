@@ -2,7 +2,7 @@ version: "3.9"
 services:
   mf_check:
     container_name: mf_check
-    image: mf_check:1
+    image: mf_check:2
     build: .
     networks:
       - public_bridge
