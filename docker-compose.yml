@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  mf_check:
+    container_name: mf_check
+    networks:
+      - nedua_stack_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mf_check.rule=Host(`mf_check.cloudcrafts.club`)"
+      - "traefik.http.services.mf_check.loadbalancer.server.port=8501"
+      - "traefik.http.routers.mf_check.middlewares=traefik-https-redirect"
+      - "traefik.http.routers.mf_check.tls=true"
+      - "traefik.http.routers.mf_check.tls.certresolver=cloudflare"
