@@ -2,8 +2,10 @@ version: "3.9"
 services:
   mf_check:
     container_name: mf_check
+    image: mf_check:1
+    build: .
     networks:
-      - nedua_stack_network
+      - public_bridge
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.mf_check.rule=Host(`mf_check.cloudcrafts.club`)"
